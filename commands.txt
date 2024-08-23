@@ -1,0 +1,5 @@
+pulumi login --local
+
+pulumi login s3://code-to-cloud-pulumi-state
+
+pulumi new python -y

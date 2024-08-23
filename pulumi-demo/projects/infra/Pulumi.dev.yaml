@@ -1,0 +1,4 @@
+encryptionsalt: v1:62HOBtsFozg=:v1:to3XCLi9w6Ob6tII:8FFeqQObvVeoxOOQmJpVlpzzcGZQog==
+config:
+  aws:region: ap-southeast-2
+  infra:environment: dev

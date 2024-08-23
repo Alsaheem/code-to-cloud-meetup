@@ -1,0 +1,10 @@
+https://www.pulumi.com/blog/converting-full-terraform-programs-to-pulumi/
+
+
+https://www.pulumi.com/docs/using-pulumi/adopting-pulumi/migrating-to-pulumi/from-terraform/
+
+
+https://github.com/uzukwujp/static-website
+
+
+pulumi convert --from terraform --language python --out pulumi
