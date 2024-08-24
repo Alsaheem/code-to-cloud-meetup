@@ -1,0 +1,11 @@
+name: database
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: project to manage databases
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python

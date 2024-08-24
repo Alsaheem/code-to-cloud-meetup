@@ -1,8 +1,7 @@
 import pulumi
 from pulumi import Config, export
 import pulumi_aws as aws
-import pulumi_random as random
-
+import random
 # Define a Pulumi configuration to use for environment and versioning
 config = Config()
 environment = config.get("environment") or "dev"

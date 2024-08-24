@@ -21,6 +21,10 @@ class S3Bucket:
             pulumi.error("The bucket name is invalid , please check for misconfigurations")
             raise Exception(f"Bucket name {new_bucket_name} is invalid")
 
+        
+        if self.environment.lower() == "production" and self.is_public is True:
+            raise Exception("Public access not allowed for prod environments")
+        
         self.s3_bucket = s3.BucketV2(f'{self.bucket_name}_Bucket', bucket=new_bucket_name)
         
         if self.is_public is True:
