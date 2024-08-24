@@ -1,4 +1,0 @@
-encryptionsalt: v1:RrAZcxP6Dnw=:v1:4xP6+vXP+LeiEVcG:wGYlzhnHY+0RuTj/s6tjqWvmqUKNWA==
-config:
-  aws:region: ap-southeast-2
-  database:environment: dev

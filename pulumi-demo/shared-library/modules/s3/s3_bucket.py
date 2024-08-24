@@ -24,6 +24,15 @@ class S3Bucket:
         self.s3_bucket = s3.BucketV2(f'{self.bucket_name}_Bucket', bucket=new_bucket_name)
         
         if self.is_public is True:
+
+            s3.BucketPublicAccessBlock(f"{self.bucket_name}_bucketPublicAccessBlockResource",
+                bucket=self.s3_bucket.id,
+                block_public_acls=False,
+                block_public_policy=False,
+                ignore_public_acls=False,
+                restrict_public_buckets=False
+            )
+
             # Define a bucket policy to make the bucket public
             s3.BucketPolicy(f'{self.bucket_name}_bucketPolicy',
                 bucket=self.s3_bucket.id,
@@ -41,21 +50,6 @@ class S3Bucket:
             )
 
         if self.cloudfront_enabled is True:
-            # Create an S3 bucket policy to allow CloudFront to read from the bucket
-            bucket_policy = s3.BucketPolicy(f"{self.bucket_name}_cloudfrontS3BucketPolicy",
-                bucket=self.s3_bucket.id,
-                policy=self.s3_bucket.id.apply(lambda bucket_id: f"""{{
-                    "Version": "2012-10-17",
-                    "Statement": [
-                        {{
-                            "Effect": "Allow",
-                            "Principal": "*",
-                            "Action": "s3:GetObject",
-                            "Resource": "arn:aws:s3:::{bucket_id}/*"
-                        }}
-                    ]
-                }}""")
-            )
 
             # Create an origin access identity for CloudFront
             origin_access_identity = cloudfront.OriginAccessIdentity(f"{self.bucket_name}_originAccessIdentity")

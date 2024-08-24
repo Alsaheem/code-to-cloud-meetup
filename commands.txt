@@ -3,3 +3,9 @@ pulumi login --local
 pulumi login s3://code-to-cloud-pulumi-state
 
 pulumi new python -y
+
+https://bootsnipp.com/snippets/kl5rW
+
+https://www.pulumi.com/docs/cli/commands/pulumi_new/
+
+https://www.pulumi.com/registry/packages/aws/api-docs/iam/group/
